@@ -62,18 +62,30 @@ Generate Lucky Number
 
 <p id="message"></p>
 <script>
-function generateNumber(){
+function generateNumber() {
 
 let name = document.getElementById("name").value;
+let dob = document.getElementById("dob").value;
 
-let number = Math.floor(Math.random()*9000000)+1000000;
+if(name=="" || dob==""){
+alert("Please enter Name and Date of Birth");
+return;
+}
 
-document.getElementById("result").innerHTML = number;
+let digits = dob.replaceAll("-","");
+
+let total = 0;
+
+for(let i=0;i<digits.length;i++){
+total += Number(digits[i]);
+}
+
+document.getElementById("result").innerHTML = total;
 
 document.getElementById("message").innerHTML =
-"Congratulations " + name + "! Your lucky number is " + number;
+"Hello " + name + "<br>Your Birth Number is " + total;
 
-}
+    }
 </script>
 </body>
 </html>
