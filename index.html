@@ -39,23 +39,43 @@ button{
 
 <h1>🔢 Lucky Number</h1>
 
-<h3>Welcome Dinkar</h3>
+<input
+id="name"
+type="text"
+placeholder="Enter Your Name"
+style="width:90%;padding:10px;margin:10px;border-radius:8px;">
 
-<p>Find your lucky number and remedies.</p>
+<br>
+
+<input
+id="dob"
+type="date"
+style="width:90%;padding:10px;margin:10px;border-radius:8px;">
+
+<br>
 
 <button onclick="generateNumber()">
 Generate Lucky Number
 </button>
 
-</div>
-<p id="result" style="font-size:30px;font-weight:bold;color:#2196F3;"></p>
+<h2 id="result"></h2>
 
+<p id="message"></p>
 <script>
 function generateNumber(){
 
-let number=Math.floor(Math.random()*9000000)+1000000;
+function generateNumber(){
 
-document.getElementById("result").innerHTML=number;
+let name = document.getElementById("name").value;
+
+let number = Math.floor(Math.random()*9000000)+1000000;
+
+document.getElementById("result").innerHTML = number;
+
+document.getElementById("message").innerHTML =
+"Congratulations " + name + "! Your lucky number is " + number;
+
+}
 
 }
 </script>
