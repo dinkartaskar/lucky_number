@@ -97,6 +97,20 @@ sum += Number(n);
 root = sum;
 
 }
+    let info = numerology[root];
+
+if (info) {
+  document.getElementById("message").innerHTML =
+  `
+  Hello ${name}<br>
+  Birth Number : ${total}<br>
+  Root Number : ${root}<br><br>
+
+  🎨 Lucky Color : ${info.color}<br>
+  📅 Lucky Day : ${info.day}<br>
+  🪔 Remedy : ${info.remedy}
+  `;
+    }
 
 document.getElementById("result").innerHTML = root;
 
