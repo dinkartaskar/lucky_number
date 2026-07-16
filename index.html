@@ -5,6 +5,17 @@
 <title>Lucky Number</title>
 
 <style>
+    <p id="result" style="font-size:30px;font-weight:bold;color:#2196F3;"></p>
+
+<script>
+function generateNumber(){
+
+let number=Math.floor(Math.random()*9000000)+1000000;
+
+document.getElementById("result").innerHTML=number;
+
+}
+</script>
 body{
     background:#f5f5f5;
     font-family:Arial,sans-serif;
