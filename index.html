@@ -62,65 +62,17 @@ Generate Lucky Number
 
 <p id="message"></p>
 <script>
-function generateNumber() {
+function generateNumber(){
 
 let name = document.getElementById("name").value;
-let dob = document.getElementById("dob").value;
 
-if(name=="" || dob==""){
-alert("Please enter Name and Date of Birth");
-return;
-}
+let number = Math.floor(Math.random()*9000000)+1000000;
 
-let digits = dob.replaceAll("-","");
-
-let total = 0;
-
-for(let i=0;i<digits.length;i++){
-total += Number(digits[i]);
-}
-
-document.getElementById("result").innerHTML = total;
+document.getElementById("result").innerHTML = number;
 
 document.getElementById("message").innerHTML =
-"Hello " + name + "<br>Your Birth Number is " + total;
-    let root = total;
-
-while (root > 9 && root != 11 && root != 22 && root != 33) {
-
-let sum = 0;
-
-root.toString().split("").forEach(function(n){
-sum += Number(n);
-});
-
-root = sum;
-
-}
-    let info = numerology[root];
-
-if (info) {
-  document.getElementById("message").innerHTML =
-  `
-  Hello ${name}<br>
-  Birth Number : ${total}<br>
-  Root Number : ${root}<br><br>
-
-  🎨 Lucky Color : ${info.color}<br>
-  📅 Lucky Day : ${info.day}<br>
-  🪔 Remedy : ${info.remedy}
-  `;
-    }
-
-document.getElementById("result").innerHTML = root;
-
-document.getElementById("message").innerHTML =
-"Hello " + name +
-"<br>Birth Number : " + total +
-"<br>Root Number : " + root;
-
-    }
-   const numerology = {
+"Congratulations " + name + "! Your lucky number is " + number;
+const numerology = {
   1: {
     color: "Red",
     day: "Sunday",
@@ -136,7 +88,9 @@ document.getElementById("message").innerHTML =
     day: "Monday",
     remedy: "Trust your intuition and stay calm."
   }
-}; 
+};
+
+}
 </script>
 </body>
 </html>
