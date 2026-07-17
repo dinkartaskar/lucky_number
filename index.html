@@ -61,7 +61,33 @@ Generate Lucky Number
 <h2 id="result"></h2>
 
 <p id="message"></p>
+
+</div>
+<p id="result" style="font-size:30px;font-weight:bold;color:#2196F3;"></p>
+
 <script>
+function generateNumber() {
+
+let name = document.getElementById("name").value;
+let dob = document.getElementById("dob").value;
+
+if(name=="" || dob==""){
+alert("Please enter Name and Date of Birth");
+return;
+}
+
+let digits = dob.replaceAll("-","");
+
+let total = 0;
+
+for(let i=0;i<digits.length;i++){
+total += Number(digits[i]);
+}
+
+document.getElementById("result").innerHTML = total;
+
+document.getElementById("message").innerHTML =
+"Hello " + name + "<br>Your Birth Number is " + total;
 let root = total;
 
 while (root > 9 && root != 11 && root != 22 && root != 33) {
@@ -95,7 +121,36 @@ if (info) {
   📅 Lucky Day : ${info.day}<br>
   🪔 Remedy : ${info.remedy}
   `;
+let info = numerology[root];
+
+if(info){
+
+document.getElementById("message").innerHTML=`
+
+👤 <b>${name}</b><br><br>
+
+🔢 Birth Number : <b>${total}</b><br>
+
+⭐ Root Number : <b>${root}</b><br>
+
+💼 Type : <b>${info.name}</b><br>
+
+🎨 Lucky Color : <b>${info.color}</b><br>
+
+📅 Lucky Day : <b>${info.day}</b><br>
+
+💎 Lucky Gem : <b>${info.gem}</b><br>
+
+🪔 Remedy : <b>${info.remedy}</b>
+
+`;
+
 }
+
+<button onclick="generateNumber()">
+Generate Lucky Number
+</button>
+const numerology = {
   1: {
     color: "Red",
     day: "Sunday",
@@ -112,8 +167,105 @@ if (info) {
     remedy: "Trust your intuition and stay calm."
   }
 };
+const numerology = {
 
+1:{
+name:"Leader",
+color:"Red",
+day:"Sunday",
+gem:"Ruby",
+remedy:"Offer water to the Sun every morning."
+},
+
+2:{
+name:"Diplomat",
+color:"White",
+day:"Monday",
+gem:"Pearl",
+remedy:"Meditate and stay calm."
+},
+
+3:{
+name:"Teacher",
+color:"Yellow",
+day:"Thursday",
+gem:"Yellow Sapphire",
+remedy:"Respect your teachers and elders."
+},
+
+4:{
+name:"Builder",
+color:"Blue",
+day:"Saturday",
+gem:"Hessonite",
+remedy:"Stay disciplined."
+},
+
+5:{
+name:"Communicator",
+color:"Green",
+day:"Wednesday",
+gem:"Emerald",
+remedy:"Read and learn every day."
+},
+
+6:{
+name:"Caretaker",
+color:"Pink",
+day:"Friday",
+gem:"Diamond",
+remedy:"Help your family."
+},
+
+7:{
+name:"Seeker",
+color:"Purple",
+day:"Monday",
+gem:"Cat's Eye",
+remedy:"Practice meditation."
+},
+
+8:{
+name:"Power",
+color:"Black",
+day:"Saturday",
+gem:"Blue Sapphire",
+remedy:"Work honestly and patiently."
+},
+
+9:{
+name:"Warrior",
+color:"Red",
+day:"Tuesday",
+gem:"Red Coral",
+remedy:"Help needy people."
+},
+
+11:{
+name:"Master Intuition",
+color:"Silver",
+day:"Monday",
+gem:"Moonstone",
+remedy:"Trust your intuition."
+},
+
+22:{
+name:"Master Builder",
+color:"Blue",
+day:"Saturday",
+gem:"Blue Sapphire",
+remedy:"Focus on long-term goals."
+},
+
+33:{
+name:"Master Teacher",
+color:"Gold",
+day:"Thursday",
+gem:"Yellow Sapphire",
+remedy:"Share knowledge with others."
 }
+
+};
 </script>
 </body>
 </html>
