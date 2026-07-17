@@ -62,17 +62,40 @@ Generate Lucky Number
 
 <p id="message"></p>
 <script>
-function generateNumber(){
+let root = total;
 
-let name = document.getElementById("name").value;
+while (root > 9 && root != 11 && root != 22 && root != 33) {
 
-let number = Math.floor(Math.random()*9000000)+1000000;
+let sum = 0;
 
-document.getElementById("result").innerHTML = number;
+root.toString().split("").forEach(function(n){
+sum += Number(n);
+});
+
+root = sum;
+
+}
+
+document.getElementById("result").innerHTML = root;
 
 document.getElementById("message").innerHTML =
-"Congratulations " + name + "! Your lucky number is " + number;
-const numerology = {
+"Hello " + name +
+"<br>Birth Number : " + total +
+"<br>Root Number : " + root;
+let info = numerology[root];
+
+if (info) {
+  document.getElementById("message").innerHTML =
+  `
+  Hello ${name}<br>
+  Birth Number : ${total}<br>
+  Root Number : ${root}<br><br>
+
+  🎨 Lucky Color : ${info.color}<br>
+  📅 Lucky Day : ${info.day}<br>
+  🪔 Remedy : ${info.remedy}
+  `;
+}
   1: {
     color: "Red",
     day: "Sunday",
