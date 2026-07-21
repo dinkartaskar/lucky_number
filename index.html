@@ -13,7 +13,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <meta name="theme-color" content="#4CAF50">
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#4CAF50">
 </head>
+    <script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("sw.js");
+  });
+}
+    </script>
 
 <body>
 
