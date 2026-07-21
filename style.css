@@ -1,0 +1,187 @@
+/* ===== Lucky Number App ===== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f5f7fb;
+    color:#222;
+    transition:.3s;
+}
+
+body.dark{
+    background:#121212;
+    color:#fff;
+}
+
+.header{
+    background:linear-gradient(135deg,#4CAF50,#2E7D32);
+    color:#fff;
+    text-align:center;
+    padding:25px;
+    box-shadow:0 3px 12px rgba(0,0,0,.2);
+}
+
+.header h1{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.header p{
+    opacity:.9;
+}
+
+#themeToggle{
+    margin-top:15px;
+    padding:10px 18px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.container{
+    width:95%;
+    max-width:900px;
+    margin:20px auto;
+}
+
+.card{
+    background:#fff;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,.1);
+}
+
+body.dark .card{
+    background:#1e1e1e;
+}
+
+.form-group{
+    margin:15px 0;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:16px;
+}
+
+button{
+    padding:12px 18px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    background:#4CAF50;
+    color:white;
+    font-size:16px;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.03);
+    background:#388E3C;
+}
+
+.hidden{
+    display:none;
+}
+
+.result-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:15px;
+    margin:20px 0;
+}
+
+.result-box{
+    background:#f2f2f2;
+    padding:15px;
+    border-radius:12px;
+    text-align:center;
+}
+
+body.dark .result-box{
+    background:#333;
+  }
+/* ===== Lucky Number App - Part 2 ===== */
+
+.action-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    justify-content:center;
+}
+
+.action-buttons button{
+    flex:1;
+    min-width:180px;
+}
+
+#historyList{
+    margin-top:15px;
+}
+
+.history-item{
+    background:#f8f8f8;
+    border-left:5px solid #4CAF50;
+    padding:12px;
+    margin-bottom:10px;
+    border-radius:8px;
+}
+
+body.dark .history-item{
+    background:#2b2b2b;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    color:#666;
+    font-size:14px;
+}
+
+body.dark footer{
+    color:#ccc;
+}
+
+.card{
+    animation:fadeIn .4s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media (max-width:768px){
+
+    .header h1{
+        font-size:24px;
+    }
+
+    .header p{
+        font-size:14px;
+    }
+
+    .container{
+        width:95
